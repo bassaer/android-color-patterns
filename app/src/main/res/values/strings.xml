@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">android-color-patterns</string>
+    <string name="android">Android</string>
+    <string name="title">Breakfast</string>
+    <string name="content">
+        Breakfast is the first meal of a day,
+        most often eaten in the early morning before undertaking the day\'s work.\n\n
+        The word in English refers to breaking the fasting period of the prior night.
+        There is a strong tendency for one or more "typical", or "traditional",
+        breakfast menus to exist in most places,
+        but the composition of this varies widely from place to place,
+        and has varied over time,
+        so that globally a very wide range of preparations and ingredients are now associated with breakfast.
+    </string>
     <string name="action_settings">Settings</string>
 </resources>
