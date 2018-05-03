@@ -3,4 +3,5 @@
     <dimen name="text_padding">8dp</dimen>
     <dimen name="font_large">24sp</dimen>
     <dimen name="font_normal">16sp</dimen>
+    <dimen name="icon_normal">50dp</dimen>
 </resources>

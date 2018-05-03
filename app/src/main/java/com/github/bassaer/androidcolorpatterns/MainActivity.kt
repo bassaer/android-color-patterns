@@ -1,9 +1,11 @@
 package com.github.bassaer.androidcolorpatterns
 
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
+import com.github.bassaer.library.MDColor
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,22 +14,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        title = getString(R.string.android)
+
+        toolbar.setBackgroundColor(MDColor.ORANGE_500)
+        window.statusBarColor = MDColor.ORANGE_700
+
+        val title = findViewById<TextView>(R.id.toolbar_title)
+        title.setTextColor(MDColor.WHITE
+        )
+        val icon = findViewById<ImageView>(R.id.toolbar_icon)
+        icon.drawable.setTint(MDColor.WHITE)
+        val fab = findViewById<FloatingActionButton>(R.id.fab)
+        fab.background.setTint(MDColor.RED_500)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }
