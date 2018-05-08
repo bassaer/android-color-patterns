@@ -35,7 +35,7 @@ class ItemAdapter(context: Context, resource: Int, list: MutableList<Color>)
 
         holder.icon?.setBackgroundColor(color.value)
         holder.name?.text = color.name
-        holder.value?.text = color.value.toString()
+        holder.value?.text = String.format("#%x", color.value)
         holder.checkbox?.isChecked = color.selected
 
         return view

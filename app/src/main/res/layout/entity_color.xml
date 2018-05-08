@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/icon_normal">
+
+    <com.github.bassaer.androidcolorpatterns.RoundImageView
+        android:id="@+id/color_icon"
+        android:layout_width="@dimen/icon_normal"
+        android:layout_height="@dimen/icon_normal"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/icon_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/color_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/color_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_toEndOf="@id/color_icon"
+        android:text="@string/cyan"
+        android:textSize="@dimen/font_normal"
+        android:layout_marginLeft="@dimen/text_margin_normal"
+        android:layout_marginRight="@dimen/text_margin_normal"
+        app:layout_constraintBottom_toTopOf="@+id/color_value"
+        app:layout_constraintEnd_toStartOf="@+id/color_checkbox"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toEndOf="@+id/color_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/color_value"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_below="@id/color_name"
+        android:layout_toEndOf="@id/color_icon"
+        android:layout_marginLeft="@dimen/text_margin_normal"
+        android:layout_marginRight="@dimen/text_margin_normal"
+        android:text="#fff2e33"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/color_checkbox"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toEndOf="@+id/color_icon"
+        app:layout_constraintTop_toBottomOf="@+id/color_name"/>
+
+
+    <CheckBox
+        android:id="@+id/color_checkbox"
+        android:layout_width="@dimen/icon_normal"
+        android:layout_height="@dimen/icon_normal"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/color_name"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

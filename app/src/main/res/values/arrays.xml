@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colors">
+        <item>Amber</item>
+        <item>Blue</item>
+        <item>Blue Grey</item>
+        <item>Brown</item>
+        <item>Cyan</item>
+        <item>Deep Orange</item>
+        <item>Deep Purple</item>
+        <item>Green</item>
+        <item>Grey</item>
+        <item>Indigo</item>
+        <item>Light Blue</item>
+        <item>Light Green</item>
+        <item>Lime</item>
+        <item>Orange</item>
+        <item>Pink</item>
+        <item>Purple</item>
+        <item>Red</item>
+        <item>Teal</item>
+        <item>Yellow</item>
+    </string-array>
+</resources>
