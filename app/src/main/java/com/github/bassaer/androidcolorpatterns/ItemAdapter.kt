@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
-import android.widget.ImageView
 import android.widget.TextView
 
 /**
@@ -42,7 +41,7 @@ class ItemAdapter(context: Context, resource: Int, list: MutableList<Color>)
     }
 
     inner class ViewHolder {
-        var icon: ImageView? = null
+        var icon: RoundView? = null
         var name: TextView? = null
         var value: TextView? = null
         var checkbox: CheckBox? = null

@@ -10,5 +10,5 @@
 
     <dimen name="icon_normal">50dp</dimen>
 
-    <dimen name="radius_normal">16dp</dimen>
+    <dimen name="radius_normal">32dp</dimen>
 </resources>
