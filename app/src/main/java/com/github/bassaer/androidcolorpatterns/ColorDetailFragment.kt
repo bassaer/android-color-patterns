@@ -6,17 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import android.widget.Toast
 import com.github.bassaer.library.MDColor
 
 /**
  * Created by nakayama on 2018/05/04.
  */
-class SettingFragment : Fragment() {
+class ColorDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        if (arguments == null || arguments[ColorListFragment.KEY] == null) {
+            Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
+            activity.finish()
+        }
+
         val rootView = inflater?.inflate(R.layout.fragment_setting, container, false)
         val listView = rootView?.findViewById<ListView>(R.id.setting_list)
-        val colorNames = resources.getStringArray(R.array.colors).toList()
+
 
         val colorList = getColorList()
 

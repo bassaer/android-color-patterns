@@ -15,7 +15,7 @@ class SettingActivity : AppCompatActivity() {
         setContentView(R.layout.actvity_setting)
 
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.fragment_container, SettingFragment())
+        transaction.add(R.id.fragment_container, ColorListFragment())
         transaction.commit()
 
         val backButton = findViewById<ImageView>(R.id.toolbar_icon_left)
