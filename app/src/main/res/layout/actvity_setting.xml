@@ -2,10 +2,12 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -25,13 +27,13 @@
 
                 <ImageButton
                     android:id="@+id/toolbar_icon_left"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="@dimen/icon_normal"
-                    android:layout_height="@dimen/icon_normal"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_arrow_back"
-                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                    android:src="@drawable/ic_arrow_back"/>
 
                 <TextView
                     android:id="@+id/toolbar_title"
@@ -39,19 +41,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:text="@string/android"
                     android:textSize="@dimen/font_large"
-                    android:textStyle="bold"
-                    android:text="@string/android"/>
-
-                <ImageButton
-                    android:id="@+id/toolbar_icon_right"
-                    android:layout_width="@dimen/icon_normal"
-                    android:layout_height="@dimen/icon_normal"
-                    android:layout_gravity="center"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_done"
-                    style="@style/Widget.AppCompat.Button.Borderless"/>
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
@@ -62,6 +54,9 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"/>
 
 </android.support.constraint.ConstraintLayout>
