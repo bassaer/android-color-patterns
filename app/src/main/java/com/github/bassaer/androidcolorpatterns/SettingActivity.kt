@@ -2,9 +2,10 @@ package com.github.bassaer.androidcolorpatterns
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.ImageButton
+import android.widget.ImageView
 
 /**
+ * Setting colors
  * Created by nakayama on 2018/05/04.
  */
 class SettingActivity : AppCompatActivity() {
@@ -17,8 +18,8 @@ class SettingActivity : AppCompatActivity() {
         transaction.add(R.id.fragment_container, SettingFragment())
         transaction.commit()
 
-        val doneButton = findViewById<ImageButton>(R.id.toolbar_icon_right)
-        doneButton.setOnClickListener {
+        val backButton = findViewById<ImageView>(R.id.toolbar_icon_left)
+        backButton.setOnClickListener {
             finish()
         }
 
