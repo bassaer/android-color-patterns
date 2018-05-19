@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="colors">
+    <array name="colors">
+        <item>@array/Amber</item>
+        <item>@array/Blue</item>
+    </array>
+
+    <array name="Amber">
         <item>Amber</item>
+        <item>@array/AmberIds</item>
+    </array>
+
+    <array name="Blue">
         <item>Blue</item>
-        <item>Blue Grey</item>
-        <item>Brown</item>
-        <item>Cyan</item>
-        <item>Deep Orange</item>
-        <item>Deep Purple</item>
-        <item>Green</item>
-        <item>Grey</item>
-        <item>Indigo</item>
-        <item>Light Blue</item>
-        <item>Light Green</item>
-        <item>Lime</item>
-        <item>Orange</item>
-        <item>Pink</item>
-        <item>Purple</item>
-        <item>Red</item>
-        <item>Teal</item>
-        <item>Yellow</item>
-    </string-array>
+        <item>@array/BlueIds</item>
+    </array>
+
+    <integer-array name="AmberIds">
+        <item>@color/amber_50</item>
+        <item>@color/amber_100</item>
+    </integer-array>
+
+    <integer-array name="BlueIds">
+        <item>@color/blue_50</item>
+        <item>@color/blue_100</item>
+    </integer-array>
 </resources>

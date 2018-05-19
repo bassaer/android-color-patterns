@@ -21,7 +21,7 @@ class ColorListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_setting, container, false)
         val listView = rootView?.findViewById<ListView>(R.id.setting_list)
-        val colorNames = resources.getStringArray(R.array.colors).toList()
+        val colorNames = (activity as SettingActivity).colors.keys.toList()
 
         val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, colorNames)
         listView?.adapter = adapter

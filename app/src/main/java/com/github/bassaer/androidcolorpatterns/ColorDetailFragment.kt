@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
-import com.github.bassaer.library.MDColor
 
 /**
  * Created by nakayama on 2018/05/04.
@@ -19,12 +18,13 @@ class ColorDetailFragment : Fragment() {
             Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
             activity.finish()
         }
+        val key = arguments[ColorListFragment.KEY]
 
         val rootView = inflater?.inflate(R.layout.fragment_setting, container, false)
         val listView = rootView?.findViewById<ListView>(R.id.setting_list)
 
 
-        val colorList = getColorList()
+        val colorList = (activity as SettingActivity).colors[key] ?: mutableListOf()
 
         val adapter = ItemAdapter(context, 0, colorList)
         listView?.adapter = adapter
@@ -32,17 +32,4 @@ class ColorDetailFragment : Fragment() {
         return rootView
     }
 
-    private fun getColorList(): MutableList<Color> {
-        val list: MutableList<Color> = mutableListOf()
-        val iterator = MDColor.sMDColorNameMap.keys.iterator()
-        while (iterator.hasNext()) {
-            val key = iterator.next() as String
-            val name = key.let {
-                it.toUpperCase().replace("_".toRegex(), " ")
-            }
-            val value = MDColor.sMDColorNameMap[key] as Int
-            list.add(Color(name, value, false))
-        }
-        return list
-    }
 }
