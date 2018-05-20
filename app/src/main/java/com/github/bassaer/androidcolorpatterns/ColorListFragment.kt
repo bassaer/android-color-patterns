@@ -34,7 +34,13 @@ class ColorListFragment : Fragment() {
             val fragment = ColorDetailFragment()
             fragment.arguments = bundle
             val transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, fragment)
+            transaction.setCustomAnimations(
+                            R.animator.slide_in_from_right,
+                            R.animator.slide_out_to_left,
+                            R.animator.slide_in_from_left,
+                            R.animator.slide_out_to_right
+                    )
+                    .replace(R.id.fragment_container, fragment)
                     .addToBackStack(javaClass.name)
                     .commit()
         }
