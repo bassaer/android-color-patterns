@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.ListView
 
 /**
+ * Base color name list
  * Created by nakayama on 2018/05/12.
  */
 class ColorListFragment : Fragment() {
