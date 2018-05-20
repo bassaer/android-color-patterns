@@ -58,7 +58,7 @@ class SettingActivity : AppCompatActivity() {
                     val name = resources.getResourceEntryName(ids.getResourceId(it, -1))
                     Color(
                             name.toUpperCase().replace("_".toRegex(), " "),
-                            ids.getInteger(it, -1),
+                            ids.getColor(it, -1),
                             false
                     )
                 }

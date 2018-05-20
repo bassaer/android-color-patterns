@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.ListView
 
 /**
@@ -36,6 +37,11 @@ class ColorListFragment : Fragment() {
             transaction.replace(R.id.fragment_container, fragment)
                     .addToBackStack(javaClass.name)
                     .commit()
+        }
+
+        val backButton = activity.findViewById<ImageView>(R.id.toolbar_icon_left)
+        backButton.setOnClickListener {
+            activity.finish()
         }
         return rootView
     }
