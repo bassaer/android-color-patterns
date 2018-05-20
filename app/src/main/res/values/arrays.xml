@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colors">
+        <item>@array/Amber</item>
+        <item>@array/Blue</item>
+    </array>
+
+    <array name="Amber">
+        <item>Amber</item>
+        <item>@array/AmberIds</item>
+    </array>
+
+    <array name="Blue">
+        <item>Blue</item>
+        <item>@array/BlueIds</item>
+    </array>
+
+    <integer-array name="AmberIds">
+        <item>@color/amber_50</item>
+        <item>@color/amber_100</item>
+    </integer-array>
+
+    <integer-array name="BlueIds">
+        <item>@color/blue_50</item>
+        <item>@color/blue_100</item>
+    </integer-array>
+</resources>

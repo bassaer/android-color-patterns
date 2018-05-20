@@ -1,9 +1,10 @@
 package com.github.bassaer.androidcolorpatterns
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
-import android.widget.ImageView
+import android.widget.ImageButton
 import android.widget.TextView
 import com.github.bassaer.library.MDColor
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,10 +22,13 @@ class MainActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.toolbar_title)
         title.setTextColor(MDColor.WHITE
         )
-        val icon = findViewById<ImageView>(R.id.toolbar_icon)
-        icon.drawable.setTint(MDColor.WHITE)
+        val settingButton = findViewById<ImageButton>(R.id.toolbar_icon)
+        settingButton.drawable.setTint(MDColor.WHITE)
+        settingButton.setOnClickListener {
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.background.setTint(MDColor.RED_500)
     }
-
 }
