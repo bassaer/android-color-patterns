@@ -12,6 +12,12 @@ import kotlinx.coroutines.experimental.launch
  */
 class SettingActivity : AppCompatActivity() {
 
+    companion object {
+        const val COLOR_PRIMARY = "Color Primary"
+        const val COLOR_PRIMARY_DARK = "Color Primary Dark"
+        const val COLOR_ACCENT = "Color Accent"
+    }
+
     var colors: HashMap<String, MutableList<Color>> = HashMap()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +27,7 @@ class SettingActivity : AppCompatActivity() {
         loadColors()
 
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.fragment_container, ColorListFragment())
+        transaction.add(R.id.fragment_container, SettingListFragment())
         transaction.commit()
 
         val backButton = findViewById<ImageView>(R.id.toolbar_icon_left)
