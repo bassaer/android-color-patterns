@@ -15,4 +15,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_settings">Settings</string>
     <string name="error">ERROR</string>
+
+    <string name="color_primary">Color Primary</string>
+    <string name="color_primary_dark">Color Primary Dark</string>
+    <string name="color_accent">Color Accent</string>
 </resources>
