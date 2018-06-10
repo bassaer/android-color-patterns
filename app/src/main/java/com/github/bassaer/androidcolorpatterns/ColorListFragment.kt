@@ -5,10 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.ListView
+import android.widget.*
 
 /**
  * Base color name list
@@ -49,6 +46,10 @@ class ColorListFragment : Fragment() {
         val backButton = activity.findViewById<ImageView>(R.id.toolbar_icon_left)
         backButton.setOnClickListener {
             fragmentManager.popBackStack()
+        }
+        if (arguments != null && arguments[SettingListFragment.KEY] != null) {
+            val toolbar = activity.findViewById<TextView>(R.id.toolbar_title)
+            toolbar.text = arguments[SettingListFragment.KEY].toString()
         }
         return rootView
     }

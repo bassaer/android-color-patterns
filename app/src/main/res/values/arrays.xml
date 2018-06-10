@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="colors">
-        <item>@array/Amber</item>
+        <item>@array/Red</item>
+        <item>@array/Pink</item>
+        <item>@array/Purple</item>
+        <item>@array/DeepPurple</item>
+        <item>@array/Indigo</item>
         <item>@array/Blue</item>
+        <item>@array/LightBlue</item>
+        <item>@array/Cyan</item>
+        <item>@array/Teal</item>
+        <item>@array/Green</item>
+        <item>@array/LightGreen</item>
+        <item>@array/Lime</item>
+        <item>@array/Yellow</item>
+        <item>@array/Amber</item>
+        <item>@array/Orange</item>
+        <item>@array/DeepOrange</item>
+        <item>@array/Brown</item>
+        <item>@array/Gray</item>
+        <item>@array/BlueGray</item>
+        <item>@array/Black</item>
+        <item>@array/White</item>
     </array>
 
-    <array name="Amber">
-        <item>Amber</item>
-        <item>@array/AmberIds</item>
+    <!-- Color name and array id -->
+
+    <array name="Red">
+        <item>Red</item>
+        <item>@array/RedIds</item>
+    </array>
+
+    <array name="Pink">
+        <item>Pink</item>
+        <item>@array/PinkIds</item>
+    </array>
+
+    <array name="Purple">
+        <item>Purple</item>
+        <item>@array/PurpleIds</item>
+    </array>
+
+    <array name="DeepPurple">
+        <item>DeepPurple</item>
+        <item>@array/DeepPurpleIds</item>
+    </array>
+
+    <array name="Indigo">
+        <item>Indigo</item>
+        <item>@array/IndigoIds</item>
     </array>
 
     <array name="Blue">
@@ -15,13 +56,403 @@
         <item>@array/BlueIds</item>
     </array>
 
-    <integer-array name="AmberIds">
-        <item>@color/amber_50</item>
-        <item>@color/amber_100</item>
-    </integer-array>
+    <array name="LightBlue">
+        <item>LightBlue</item>
+        <item>@array/LightBlueIds</item>
+    </array>
 
-    <integer-array name="BlueIds">
+    <array name="Cyan">
+        <item>Cyan</item>
+        <item>@array/CyanIds</item>
+    </array>
+
+    <array name="Teal">
+        <item>Teal</item>
+        <item>@array/TealIds</item>
+    </array>
+
+    <array name="Green">
+        <item>Green</item>
+        <item>@array/GreenIds</item>
+    </array>
+
+    <array name="LightGreen">
+        <item>LightGreen</item>
+        <item>@array/LightGreenIds</item>
+    </array>
+
+    <array name="Lime">
+        <item>Lime</item>
+        <item>@array/LimeIds</item>
+    </array>
+
+    <array name="Yellow">
+        <item>Yellow</item>
+        <item>@array/YellowIds</item>
+    </array>
+
+    <array name="Amber">
+        <item>Amber</item>
+        <item>@array/AmberIds</item>
+    </array>
+
+    <array name="Orange">
+        <item>Orange</item>
+        <item>@array/OrangeIds</item>
+    </array>
+
+    <array name="DeepOrange">
+        <item>DeepOrange</item>
+        <item>@array/DeepOrangeIds</item>
+    </array>
+
+    <array name="Brown">
+        <item>Brown</item>
+        <item>@array/BrownIds</item>
+    </array>
+
+    <array name="Gray">
+        <item>Gray</item>
+        <item>@array/GrayIds</item>
+    </array>
+
+    <array name="BlueGray">
+        <item>BlueGray</item>
+        <item>@array/BlueGrayIds</item>
+    </array>
+
+
+    <array name="Black">
+        <item>Black</item>
+        <item>@array/BlackIds</item>
+    </array>
+
+    <array name="White">
+        <item>White</item>
+        <item>@array/WhiteIds</item>
+    </array>
+
+
+    <!-- Color Ids -->
+
+    <array name="RedIds">
+        <item>@color/red_50</item>
+        <item>@color/red_100</item>
+        <item>@color/red_200</item>
+        <item>@color/red_300</item>
+        <item>@color/red_400</item>
+        <item>@color/red_500</item>
+        <item>@color/red_600</item>
+        <item>@color/red_700</item>
+        <item>@color/red_800</item>
+        <item>@color/red_900</item>
+        <item>@color/red_a_100</item>
+        <item>@color/red_a_200</item>
+        <item>@color/red_a_400</item>
+        <item>@color/red_a_700</item>
+    </array>
+
+    <array name="PinkIds">
+        <item>@color/pink_50</item>
+        <item>@color/pink_100</item>
+        <item>@color/pink_200</item>
+        <item>@color/pink_300</item>
+        <item>@color/pink_400</item>
+        <item>@color/pink_500</item>
+        <item>@color/pink_600</item>
+        <item>@color/pink_700</item>
+        <item>@color/pink_800</item>
+        <item>@color/pink_900</item>
+        <item>@color/pink_a_100</item>
+        <item>@color/pink_a_200</item>
+        <item>@color/pink_a_400</item>
+        <item>@color/pink_a_700</item>
+    </array>
+
+    <array name="PurpleIds">
+        <item>@color/purple_50</item>
+        <item>@color/purple_100</item>
+        <item>@color/purple_200</item>
+        <item>@color/purple_300</item>
+        <item>@color/purple_400</item>
+        <item>@color/purple_500</item>
+        <item>@color/purple_600</item>
+        <item>@color/purple_700</item>
+        <item>@color/purple_800</item>
+        <item>@color/purple_900</item>
+        <item>@color/purple_a_100</item>
+        <item>@color/purple_a_200</item>
+        <item>@color/purple_a_400</item>
+        <item>@color/purple_a_700</item>
+    </array>
+
+    <array name="DeepPurpleIds">
+        <item>@color/deep_purple_50</item>
+        <item>@color/deep_purple_100</item>
+        <item>@color/deep_purple_200</item>
+        <item>@color/deep_purple_300</item>
+        <item>@color/deep_purple_400</item>
+        <item>@color/deep_purple_500</item>
+        <item>@color/deep_purple_600</item>
+        <item>@color/deep_purple_700</item>
+        <item>@color/deep_purple_800</item>
+        <item>@color/deep_purple_900</item>
+        <item>@color/deep_purple_a_100</item>
+        <item>@color/deep_purple_a_200</item>
+        <item>@color/deep_purple_a_400</item>
+        <item>@color/deep_purple_a_700</item>
+    </array>
+
+    <array name="IndigoIds">
+        <item>@color/indigo_50</item>
+        <item>@color/indigo_100</item>
+        <item>@color/indigo_200</item>
+        <item>@color/indigo_300</item>
+        <item>@color/indigo_400</item>
+        <item>@color/indigo_500</item>
+        <item>@color/indigo_600</item>
+        <item>@color/indigo_700</item>
+        <item>@color/indigo_800</item>
+        <item>@color/indigo_900</item>
+        <item>@color/indigo_a_100</item>
+        <item>@color/indigo_a_200</item>
+        <item>@color/indigo_a_400</item>
+        <item>@color/indigo_a_700</item>
+    </array>
+
+    <array name="BlueIds">
         <item>@color/blue_50</item>
         <item>@color/blue_100</item>
-    </integer-array>
+        <item>@color/blue_200</item>
+        <item>@color/blue_300</item>
+        <item>@color/blue_400</item>
+        <item>@color/blue_500</item>
+        <item>@color/blue_600</item>
+        <item>@color/blue_700</item>
+        <item>@color/blue_800</item>
+        <item>@color/blue_900</item>
+        <item>@color/blue_a_100</item>
+        <item>@color/blue_a_200</item>
+        <item>@color/blue_a_400</item>
+        <item>@color/blue_a_700</item>
+    </array>
+
+    <array name="LightBlueIds">
+        <item>@color/light_blue_50</item>
+        <item>@color/light_blue_100</item>
+        <item>@color/light_blue_200</item>
+        <item>@color/light_blue_300</item>
+        <item>@color/light_blue_400</item>
+        <item>@color/light_blue_500</item>
+        <item>@color/light_blue_600</item>
+        <item>@color/light_blue_700</item>
+        <item>@color/light_blue_800</item>
+        <item>@color/light_blue_900</item>
+        <item>@color/light_blue_a_100</item>
+        <item>@color/light_blue_a_200</item>
+        <item>@color/light_blue_a_400</item>
+        <item>@color/light_blue_a_700</item>
+    </array>
+
+    <array name="CyanIds">
+        <item>@color/cyan_50</item>
+        <item>@color/cyan_100</item>
+        <item>@color/cyan_200</item>
+        <item>@color/cyan_300</item>
+        <item>@color/cyan_400</item>
+        <item>@color/cyan_500</item>
+        <item>@color/cyan_600</item>
+        <item>@color/cyan_700</item>
+        <item>@color/cyan_800</item>
+        <item>@color/cyan_900</item>
+        <item>@color/cyan_a_100</item>
+        <item>@color/cyan_a_200</item>
+        <item>@color/cyan_a_400</item>
+        <item>@color/cyan_a_700</item>
+    </array>
+
+    <array name="TealIds">
+        <item>@color/teal_50</item>
+        <item>@color/teal_100</item>
+        <item>@color/teal_200</item>
+        <item>@color/teal_300</item>
+        <item>@color/teal_400</item>
+        <item>@color/teal_500</item>
+        <item>@color/teal_600</item>
+        <item>@color/teal_700</item>
+        <item>@color/teal_800</item>
+        <item>@color/teal_900</item>
+        <item>@color/teal_a_100</item>
+        <item>@color/teal_a_200</item>
+        <item>@color/teal_a_400</item>
+        <item>@color/teal_a_700</item>
+    </array>
+
+    <array name="GreenIds">
+        <item>@color/green_50</item>
+        <item>@color/green_100</item>
+        <item>@color/green_200</item>
+        <item>@color/green_300</item>
+        <item>@color/green_400</item>
+        <item>@color/green_500</item>
+        <item>@color/green_600</item>
+        <item>@color/green_700</item>
+        <item>@color/green_800</item>
+        <item>@color/green_900</item>
+        <item>@color/green_a_100</item>
+        <item>@color/green_a_200</item>
+        <item>@color/green_a_400</item>
+        <item>@color/green_a_700</item>
+    </array>
+
+    <array name="LightGreenIds">
+        <item>@color/light_green_50</item>
+        <item>@color/light_green_100</item>
+        <item>@color/light_green_200</item>
+        <item>@color/light_green_300</item>
+        <item>@color/light_green_400</item>
+        <item>@color/light_green_500</item>
+        <item>@color/light_green_600</item>
+        <item>@color/light_green_700</item>
+        <item>@color/light_green_800</item>
+        <item>@color/light_green_900</item>
+        <item>@color/light_green_a_100</item>
+        <item>@color/light_green_a_200</item>
+        <item>@color/light_green_a_400</item>
+        <item>@color/light_green_a_700</item>
+    </array>
+
+    <array name="LimeIds">
+        <item>@color/lime_50</item>
+        <item>@color/lime_100</item>
+        <item>@color/lime_200</item>
+        <item>@color/lime_300</item>
+        <item>@color/lime_400</item>
+        <item>@color/lime_500</item>
+        <item>@color/lime_600</item>
+        <item>@color/lime_700</item>
+        <item>@color/lime_800</item>
+        <item>@color/lime_900</item>
+        <item>@color/lime_a_100</item>
+        <item>@color/lime_a_200</item>
+        <item>@color/lime_a_400</item>
+        <item>@color/lime_a_700</item>
+    </array>
+
+    <array name="YellowIds">
+        <item>@color/yellow_50</item>
+        <item>@color/yellow_100</item>
+        <item>@color/yellow_200</item>
+        <item>@color/yellow_300</item>
+        <item>@color/yellow_400</item>
+        <item>@color/yellow_500</item>
+        <item>@color/yellow_600</item>
+        <item>@color/yellow_700</item>
+        <item>@color/yellow_800</item>
+        <item>@color/yellow_900</item>
+        <item>@color/yellow_a_100</item>
+        <item>@color/yellow_a_200</item>
+        <item>@color/yellow_a_400</item>
+        <item>@color/yellow_a_700</item>
+    </array>
+
+    <array name="AmberIds">
+        <item>@color/amber_50</item>
+        <item>@color/amber_100</item>
+        <item>@color/amber_200</item>
+        <item>@color/amber_300</item>
+        <item>@color/amber_400</item>
+        <item>@color/amber_500</item>
+        <item>@color/amber_600</item>
+        <item>@color/amber_700</item>
+        <item>@color/amber_800</item>
+        <item>@color/amber_900</item>
+        <item>@color/amber_a_100</item>
+        <item>@color/amber_a_200</item>
+        <item>@color/amber_a_400</item>
+        <item>@color/amber_a_700</item>
+    </array>
+
+    <array name="OrangeIds">
+        <item>@color/orange_50</item>
+        <item>@color/orange_100</item>
+        <item>@color/orange_200</item>
+        <item>@color/orange_300</item>
+        <item>@color/orange_400</item>
+        <item>@color/orange_500</item>
+        <item>@color/orange_600</item>
+        <item>@color/orange_700</item>
+        <item>@color/orange_800</item>
+        <item>@color/orange_900</item>
+        <item>@color/orange_a_100</item>
+        <item>@color/orange_a_200</item>
+        <item>@color/orange_a_400</item>
+        <item>@color/orange_a_700</item>
+    </array>
+
+    <array name="DeepOrangeIds">
+        <item>@color/deep_orange_50</item>
+        <item>@color/deep_orange_100</item>
+        <item>@color/deep_orange_200</item>
+        <item>@color/deep_orange_300</item>
+        <item>@color/deep_orange_400</item>
+        <item>@color/deep_orange_500</item>
+        <item>@color/deep_orange_600</item>
+        <item>@color/deep_orange_700</item>
+        <item>@color/deep_orange_800</item>
+        <item>@color/deep_orange_900</item>
+        <item>@color/deep_orange_a_100</item>
+        <item>@color/deep_orange_a_200</item>
+        <item>@color/deep_orange_a_400</item>
+        <item>@color/deep_orange_a_700</item>
+    </array>
+
+
+    <array name="BrownIds">
+        <item>@color/brown_50</item>
+        <item>@color/brown_100</item>
+        <item>@color/brown_200</item>
+        <item>@color/brown_300</item>
+        <item>@color/brown_400</item>
+        <item>@color/brown_500</item>
+        <item>@color/brown_600</item>
+        <item>@color/brown_700</item>
+        <item>@color/brown_800</item>
+        <item>@color/brown_900</item>
+    </array>
+
+    <array name="GrayIds">
+        <item>@color/grey_50</item>
+        <item>@color/grey_100</item>
+        <item>@color/grey_200</item>
+        <item>@color/grey_300</item>
+        <item>@color/grey_400</item>
+        <item>@color/grey_500</item>
+        <item>@color/grey_600</item>
+        <item>@color/grey_700</item>
+        <item>@color/grey_800</item>
+        <item>@color/grey_900</item>
+    </array>
+
+    <array name="BlueGrayIds">
+        <item>@color/blue_grey_50</item>
+        <item>@color/blue_grey_100</item>
+        <item>@color/blue_grey_200</item>
+        <item>@color/blue_grey_300</item>
+        <item>@color/blue_grey_400</item>
+        <item>@color/blue_grey_500</item>
+        <item>@color/blue_grey_600</item>
+        <item>@color/blue_grey_700</item>
+        <item>@color/blue_grey_800</item>
+        <item>@color/blue_grey_900</item>
+    </array>
+
+    <array name="BlackIds">
+        <item>@color/black</item>
+    </array>
+
+    <array name="WhiteIds">
+        <item>@color/white</item>
+    </array>
+
 </resources>
