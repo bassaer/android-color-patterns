@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 
 /**
@@ -33,6 +34,11 @@ class ColorDetailFragment : Fragment() {
         val backButton = activity.findViewById<ImageView>(R.id.toolbar_icon_left)
         backButton.setOnClickListener {
             fragmentManager.popBackStack()
+        }
+
+        if (arguments != null && arguments[ColorListFragment.KEY] != null) {
+            val toolbar = activity.findViewById<TextView>(R.id.toolbar_title)
+            toolbar.text = arguments[ColorListFragment.KEY].toString()
         }
 
         return rootView

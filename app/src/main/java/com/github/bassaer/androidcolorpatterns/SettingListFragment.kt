@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.ListView
+import android.widget.TextView
 
 /**
  * List of setting color,
@@ -53,6 +54,8 @@ class SettingListFragment : Fragment() {
             activity.finish()
         }
 
+        val toolbar = activity.findViewById<TextView>(R.id.toolbar_title)
+        toolbar.text = getString(R.string.color_type)
         return rootView
     }
 }
