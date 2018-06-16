@@ -24,9 +24,14 @@ class ColorListFragment : Fragment() {
 
         val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, colorNames)
         listView?.adapter = adapter
-
+        val bundle = Bundle()
+        if (arguments != null && arguments[SettingListFragment.KEY] != null) {
+            val toolbar = activity.findViewById<TextView>(R.id.toolbar_title)
+            val colorType = arguments[SettingListFragment.KEY].toString()
+            toolbar.text = colorType
+            bundle.putString(SettingListFragment.KEY, colorType)
+        }
         listView?.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
-            val bundle = Bundle()
             val name = parent.getItemAtPosition(position) as String
             bundle.putString(KEY, name)
             val fragment = ColorDetailFragment()
@@ -47,10 +52,7 @@ class ColorListFragment : Fragment() {
         backButton.setOnClickListener {
             fragmentManager.popBackStack()
         }
-        if (arguments != null && arguments[SettingListFragment.KEY] != null) {
-            val toolbar = activity.findViewById<TextView>(R.id.toolbar_title)
-            toolbar.text = arguments[SettingListFragment.KEY].toString()
-        }
+
         return rootView
     }
 

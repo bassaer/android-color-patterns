@@ -24,9 +24,9 @@ class SettingListFragment : Fragment() {
         val rootView = inflater?.inflate(R.layout.fragment_setting, container, false)
         val listView = rootView?.findViewById<ListView>(R.id.setting_list)
         val list = listOf(
-                SettingActivity.COLOR_PRIMARY,
-                SettingActivity.COLOR_PRIMARY_DARK,
-                SettingActivity.COLOR_ACCENT
+                ColorManager.COLOR_PRIMARY,
+                ColorManager.COLOR_PRIMARY_DARK,
+                ColorManager.COLOR_ACCENT
         )
         val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, list)
         listView?.adapter = adapter

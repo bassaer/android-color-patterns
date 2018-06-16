@@ -12,8 +12,29 @@ import android.widget.TextView
  * Color list adapter
  * Created by nakayama on 2018/05/05.
  */
-class ItemAdapter(context: Context, resource: Int, list: MutableList<Color>)
+class ItemAdapter(context: Context, resource: Int, list: MutableList<Color>, type: String)
     : ArrayAdapter<Color>(context, resource, list) {
+
+    private var selectedColor: Int
+    init {
+        val manager = ColorManager(context)
+        selectedColor = when (type) {
+            ColorManager.COLOR_PRIMARY -> {
+                manager.getPrimary()
+            }
+            ColorManager.COLOR_PRIMARY_DARK -> {
+                manager.getPrimaryDark()
+            }
+            else -> {
+                manager.getAccent()
+            }
+        }
+    }
+
+    fun selectColor(color: Int) {
+        selectedColor = color
+        notifyDataSetChanged()
+    }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val color = getItem(position) as Color
@@ -35,7 +56,7 @@ class ItemAdapter(context: Context, resource: Int, list: MutableList<Color>)
         holder.icon?.setBackgroundColor(color.value)
         holder.name?.text = color.name
         holder.value?.text = String.format("#%x", color.value)
-        holder.checkbox?.isChecked = color.selected
+        holder.checkbox?.isChecked = color.value == selectedColor
 
         return view
     }
@@ -48,3 +69,4 @@ class ItemAdapter(context: Context, resource: Int, list: MutableList<Color>)
     }
 
 }
+

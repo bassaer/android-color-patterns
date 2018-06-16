@@ -11,24 +11,30 @@ import android.widget.*
  * Selecting color
  * Created by nakayama on 2018/05/04.
  */
-class ColorDetailFragment : Fragment(), AdapterView.OnItemClickListener {
-
+class ColorDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        if (arguments == null || arguments[ColorListFragment.KEY] == null) {
+        if (arguments == null || arguments[ColorListFragment.KEY] == null ||
+                arguments[SettingListFragment.KEY] == null ) {
             Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
             activity.finish()
         }
-        val key = arguments[ColorListFragment.KEY]
+        val key = arguments.getString(ColorListFragment.KEY)
+        val type = arguments.getString(SettingListFragment.KEY)
 
         val rootView = inflater?.inflate(R.layout.fragment_setting, container, false)
         val listView = rootView?.findViewById<ListView>(R.id.setting_list)
 
         val colorList = (activity as SettingActivity).colors[key] ?: mutableListOf()
 
-        val adapter = ItemAdapter(context, 0, colorList)
+        val adapter = ItemAdapter(context, 0, colorList, type)
         listView?.adapter = adapter
-        listView?.onItemClickListener = this
+        listView?.onItemClickListener = AdapterView.OnItemClickListener {parent, view, position, _ ->
+            val checkbox = view?.findViewById<CheckBox>(R.id.color_checkbox)
+            checkbox?.isChecked = if (checkbox != null) !checkbox.isChecked else false
+            val selectedColor = parent.getItemAtPosition(position) as Color
+            adapter.selectColor(color = selectedColor.value)
+        }
 
         val backButton = activity.findViewById<ImageView>(R.id.toolbar_icon_left)
         backButton.setOnClickListener {
@@ -42,11 +48,4 @@ class ColorDetailFragment : Fragment(), AdapterView.OnItemClickListener {
 
         return rootView
     }
-
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val checkbox = view?.findViewById<CheckBox>(R.id.color_checkbox)
-        checkbox?.isChecked = if (checkbox != null) !checkbox.isChecked else false
-
-    }
-
 }

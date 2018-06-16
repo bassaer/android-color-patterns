@@ -12,12 +12,6 @@ import kotlinx.coroutines.experimental.launch
  */
 class SettingActivity : AppCompatActivity() {
 
-    companion object {
-        const val COLOR_PRIMARY = "Color Primary"
-        const val COLOR_PRIMARY_DARK = "Color Primary Dark"
-        const val COLOR_ACCENT = "Color Accent"
-    }
-
     var colors: HashMap<String, MutableList<Color>> = HashMap()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,8 +58,7 @@ class SettingActivity : AppCompatActivity() {
                     val name = resources.getResourceEntryName(ids.getResourceId(it, -1))
                     Color(
                             name.toUpperCase().replace("_".toRegex(), " "),
-                            ids.getColor(it, -1),
-                            false
+                            ids.getColor(it, -1)
                     )
                 }
                 colors.put(colorArray.getString(0), list)
