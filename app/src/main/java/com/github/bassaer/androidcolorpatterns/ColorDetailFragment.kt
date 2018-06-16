@@ -2,6 +2,7 @@ package com.github.bassaer.androidcolorpatterns
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,18 @@ import android.widget.*
  * Created by nakayama on 2018/05/04.
  */
 class ColorDetailFragment : Fragment() {
+
+
+
+    private val colorType: String by lazy {
+        if (arguments == null || arguments[SettingListFragment.KEY] == null) {
+            ""
+        } else {
+            arguments[SettingListFragment.KEY] as String
+        }
+    }
+
+    private var selectedColor: Int = Int.MAX_VALUE
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (arguments == null || arguments[ColorListFragment.KEY] == null ||
@@ -32,8 +45,10 @@ class ColorDetailFragment : Fragment() {
         listView?.onItemClickListener = AdapterView.OnItemClickListener {parent, view, position, _ ->
             val checkbox = view?.findViewById<CheckBox>(R.id.color_checkbox)
             checkbox?.isChecked = if (checkbox != null) !checkbox.isChecked else false
-            val selectedColor = parent.getItemAtPosition(position) as Color
-            adapter.selectColor(color = selectedColor.value)
+            selectedColor = (parent.getItemAtPosition(position) as Color).value
+            adapter.selectColor(color = selectedColor)
+            val color = String.format("%x", selectedColor)
+            Log.d(javaClass.name, "[clicked] $colorType -> $color")
         }
 
         val backButton = activity.findViewById<ImageView>(R.id.toolbar_icon_left)
@@ -47,5 +62,24 @@ class ColorDetailFragment : Fragment() {
         }
 
         return rootView
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (selectedColor == Int.MAX_VALUE || colorType.isEmpty()) {
+            return
+        }
+        val manager = ColorManager(context)
+        when(colorType) {
+            ColorManager.COLOR_PRIMARY -> {
+                manager.setPrimary(selectedColor)
+            }
+            ColorManager.COLOR_PRIMARY_DARK -> {
+                manager.setPrimaryDark(selectedColor)
+            }
+            else -> {
+                manager.setAccent(selectedColor)
+            }
+        }
     }
 }

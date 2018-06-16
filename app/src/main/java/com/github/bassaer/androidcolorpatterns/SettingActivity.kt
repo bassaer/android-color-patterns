@@ -3,6 +3,7 @@ package com.github.bassaer.androidcolorpatterns
 import android.os.Bundle
 import android.support.annotation.StyleableRes
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.widget.ImageView
 import kotlinx.coroutines.experimental.launch
 
@@ -13,6 +14,18 @@ import kotlinx.coroutines.experimental.launch
 class SettingActivity : AppCompatActivity() {
 
     var colors: HashMap<String, MutableList<Color>> = HashMap()
+
+    override fun onResume() {
+        super.onResume()
+        update()
+    }
+
+    fun update() {
+        val manager = ColorManager(this)
+        window.statusBarColor = manager.getPrimaryDark()
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setBackgroundColor(manager.getPrimary())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +41,6 @@ class SettingActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
-
     }
 
     private fun loadColors() {

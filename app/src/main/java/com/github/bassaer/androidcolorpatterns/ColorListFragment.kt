@@ -56,4 +56,8 @@ class ColorListFragment : Fragment() {
         return rootView
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as SettingActivity).update()
+    }
 }

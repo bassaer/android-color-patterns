@@ -58,4 +58,9 @@ class SettingListFragment : Fragment() {
         toolbar.text = getString(R.string.color_type)
         return rootView
     }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as SettingActivity).update()
+    }
 }
