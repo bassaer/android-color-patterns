@@ -16,19 +16,35 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        toolbar.setBackgroundColor(MDColor.ORANGE_500)
-        window.statusBarColor = MDColor.ORANGE_700
-
         val title = findViewById<TextView>(R.id.toolbar_title)
-        title.setTextColor(MDColor.WHITE
-        )
+        title.setTextColor(MDColor.WHITE)
         val settingButton = findViewById<ImageButton>(R.id.toolbar_icon)
         settingButton.drawable.setTint(MDColor.WHITE)
         settingButton.setOnClickListener {
             val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val manager = ColorManager(this)
+        toolbar.setBackgroundColor(manager.getPrimary())
+        val title = toolbar.findViewById<TextView>(R.id.toolbar_title)
+        title.setTextColor(manager.getTextColorPrimary())
+        window.statusBarColor = manager.getPrimaryDark()
         val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.background.setTint(MDColor.RED_500)
+        fab.background.setTint(manager.getAccent())
+        fab.setImageDrawable(Util.getColoredDrawable(
+                this,
+                manager.getFabIcon(),
+                R.drawable.ic_create
+        ))
+        val settingButton = toolbar.findViewById<ImageButton>(R.id.toolbar_icon)
+        settingButton.setImageDrawable(Util.getColoredDrawable(
+                this,
+                manager.getTextColorSecondary(),
+                R.drawable.ic_settings
+        ))
     }
 }

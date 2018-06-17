@@ -3,8 +3,12 @@ package com.github.bassaer.androidcolorpatterns
 import android.os.Bundle
 import android.support.annotation.StyleableRes
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.widget.ImageView
+import android.widget.TextView
 import kotlinx.coroutines.experimental.launch
+
+
 
 /**
  * Setting colors
@@ -12,13 +16,28 @@ import kotlinx.coroutines.experimental.launch
  */
 class SettingActivity : AppCompatActivity() {
 
-    companion object {
-        const val COLOR_PRIMARY = "Color Primary"
-        const val COLOR_PRIMARY_DARK = "Color Primary Dark"
-        const val COLOR_ACCENT = "Color Accent"
+    var colors: HashMap<String, MutableList<Color>> = HashMap()
+
+    override fun onResume() {
+        super.onResume()
+        update()
     }
 
-    var colors: HashMap<String, MutableList<Color>> = HashMap()
+    fun update() {
+        val manager = ColorManager(this)
+        window.statusBarColor = manager.getPrimaryDark()
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setBackgroundColor(manager.getPrimary())
+        val title = toolbar.findViewById<TextView>(R.id.toolbar_title)
+        title.setTextColor(manager.getTextColorPrimary())
+        val leftButton = toolbar.findViewById<ImageView>(R.id.toolbar_icon_left)
+        leftButton.setImageDrawable(Util.getColoredDrawable(
+                this,
+                manager.getTextColorSecondary(),
+                R.drawable.ic_arrow_back
+        ))
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +53,9 @@ class SettingActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
-
     }
 
     private fun loadColors() {
-
         launch {
             colors = HashMap()
             @StyleableRes val index = 1
@@ -64,17 +81,14 @@ class SettingActivity : AppCompatActivity() {
                     val name = resources.getResourceEntryName(ids.getResourceId(it, -1))
                     Color(
                             name.toUpperCase().replace("_".toRegex(), " "),
-                            ids.getColor(it, -1),
-                            false
+                            ids.getColor(it, -1)
                     )
                 }
                 colors.put(colorArray.getString(0), list)
                 colorArray.recycle()
                 ids.recycle()
             }
-
             colorNames.recycle()
         }
-
     }
 }

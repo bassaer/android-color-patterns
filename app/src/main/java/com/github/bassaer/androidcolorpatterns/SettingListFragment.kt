@@ -24,9 +24,12 @@ class SettingListFragment : Fragment() {
         val rootView = inflater?.inflate(R.layout.fragment_setting, container, false)
         val listView = rootView?.findViewById<ListView>(R.id.setting_list)
         val list = listOf(
-                SettingActivity.COLOR_PRIMARY,
-                SettingActivity.COLOR_PRIMARY_DARK,
-                SettingActivity.COLOR_ACCENT
+                ColorManager.COLOR_PRIMARY,
+                ColorManager.COLOR_PRIMARY_DARK,
+                ColorManager.COLOR_ACCENT,
+                ColorManager.TEXT_COLOR_PRIMARY,
+                ColorManager.TEXT_COLOR_SECONDARY,
+                ColorManager.FAB_ICON
         )
         val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, list)
         listView?.adapter = adapter
@@ -57,5 +60,10 @@ class SettingListFragment : Fragment() {
         val toolbar = activity.findViewById<TextView>(R.id.toolbar_title)
         toolbar.text = getString(R.string.color_type)
         return rootView
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as SettingActivity).update()
     }
 }
