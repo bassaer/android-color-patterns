@@ -5,7 +5,10 @@ import android.support.annotation.StyleableRes
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.widget.ImageView
+import android.widget.TextView
 import kotlinx.coroutines.experimental.launch
+
+
 
 /**
  * Setting colors
@@ -25,7 +28,16 @@ class SettingActivity : AppCompatActivity() {
         window.statusBarColor = manager.getPrimaryDark()
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setBackgroundColor(manager.getPrimary())
+        val title = toolbar.findViewById<TextView>(R.id.toolbar_title)
+        title.setTextColor(manager.getTextColorPrimary())
+        val leftButton = toolbar.findViewById<ImageView>(R.id.toolbar_icon_left)
+        leftButton.setImageDrawable(Util.getColoredDrawable(
+                this,
+                manager.getTextColorSecondary(),
+                R.drawable.ic_arrow_back
+        ))
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +56,6 @@ class SettingActivity : AppCompatActivity() {
     }
 
     private fun loadColors() {
-
         launch {
             colors = HashMap()
             @StyleableRes val index = 1
@@ -77,9 +88,7 @@ class SettingActivity : AppCompatActivity() {
                 colorArray.recycle()
                 ids.recycle()
             }
-
             colorNames.recycle()
         }
-
     }
 }

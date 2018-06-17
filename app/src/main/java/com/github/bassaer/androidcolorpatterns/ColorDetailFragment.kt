@@ -2,7 +2,6 @@ package com.github.bassaer.androidcolorpatterns
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +12,6 @@ import android.widget.*
  * Created by nakayama on 2018/05/04.
  */
 class ColorDetailFragment : Fragment() {
-
-
 
     private val colorType: String by lazy {
         if (arguments == null || arguments[SettingListFragment.KEY] == null) {
@@ -47,8 +44,6 @@ class ColorDetailFragment : Fragment() {
             checkbox?.isChecked = if (checkbox != null) !checkbox.isChecked else false
             selectedColor = (parent.getItemAtPosition(position) as Color).value
             adapter.selectColor(color = selectedColor)
-            val color = String.format("%x", selectedColor)
-            Log.d(javaClass.name, "[clicked] $colorType -> $color")
         }
 
         val backButton = activity.findViewById<ImageView>(R.id.toolbar_icon_left)
@@ -77,8 +72,17 @@ class ColorDetailFragment : Fragment() {
             ColorManager.COLOR_PRIMARY_DARK -> {
                 manager.setPrimaryDark(selectedColor)
             }
-            else -> {
+            ColorManager.COLOR_ACCENT -> {
                 manager.setAccent(selectedColor)
+            }
+            ColorManager.TEXT_COLOR_PRIMARY -> {
+                manager.setTextColorPrimary(selectedColor)
+            }
+            ColorManager.TEXT_COLOR_SECONDARY -> {
+                manager.setTextColorSecondary(selectedColor)
+            }
+            ColorManager.FAB_ICON -> {
+                manager.setFabIcon(selectedColor)
             }
         }
     }

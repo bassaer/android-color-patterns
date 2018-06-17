@@ -14,6 +14,9 @@ class ColorManager (val context: Context) {
         const val COLOR_PRIMARY = "Color Primary"
         const val COLOR_PRIMARY_DARK = "Color Primary Dark"
         const val COLOR_ACCENT = "Color Accent"
+        const val TEXT_COLOR_PRIMARY = "Text Color Primary"
+        const val TEXT_COLOR_SECONDARY = "Text Color Secondary"
+        const val FAB_ICON = "FAB Icon"
     }
 
     private val prefs: SharedPreferences by lazy {
@@ -26,11 +29,23 @@ class ColorManager (val context: Context) {
 
     fun getAccent() = get(COLOR_ACCENT, R.color.colorAccent)
 
+    fun getTextColorPrimary() = get(TEXT_COLOR_PRIMARY, R.color.textColorPrimary)
+
+    fun getTextColorSecondary() = get(TEXT_COLOR_SECONDARY, R.color.textColorSecondary)
+
+    fun getFabIcon() = get(FAB_ICON, R.color.fabIcon)
+
     fun setPrimary(color: Int) = set(COLOR_PRIMARY, color)
 
-    fun setPrimaryDark(color: Int) =set(COLOR_PRIMARY_DARK, color)
+    fun setPrimaryDark(color: Int) = set(COLOR_PRIMARY_DARK, color)
 
     fun setAccent(color: Int) = set(COLOR_ACCENT, color)
+
+    fun setTextColorPrimary(color: Int) = set(TEXT_COLOR_PRIMARY, color)
+
+    fun setTextColorSecondary(color: Int) = set(TEXT_COLOR_SECONDARY, color)
+
+    fun setFabIcon(color: Int) = set(FAB_ICON, color)
 
     private fun get(key: String, default: Int): Int {
         return prefs.getInt(key, ContextCompat.getColor(context, default))

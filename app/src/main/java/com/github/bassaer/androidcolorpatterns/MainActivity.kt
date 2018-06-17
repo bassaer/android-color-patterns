@@ -30,8 +30,21 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         val manager = ColorManager(this)
         toolbar.setBackgroundColor(manager.getPrimary())
+        val title = toolbar.findViewById<TextView>(R.id.toolbar_title)
+        title.setTextColor(manager.getTextColorPrimary())
         window.statusBarColor = manager.getPrimaryDark()
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.background.setTint(manager.getAccent())
+        fab.setImageDrawable(Util.getColoredDrawable(
+                this,
+                manager.getFabIcon(),
+                R.drawable.ic_create
+        ))
+        val settingButton = toolbar.findViewById<ImageButton>(R.id.toolbar_icon)
+        settingButton.setImageDrawable(Util.getColoredDrawable(
+                this,
+                manager.getTextColorSecondary(),
+                R.drawable.ic_settings
+        ))
     }
 }

@@ -26,7 +26,10 @@ class SettingListFragment : Fragment() {
         val list = listOf(
                 ColorManager.COLOR_PRIMARY,
                 ColorManager.COLOR_PRIMARY_DARK,
-                ColorManager.COLOR_ACCENT
+                ColorManager.COLOR_ACCENT,
+                ColorManager.TEXT_COLOR_PRIMARY,
+                ColorManager.TEXT_COLOR_SECONDARY,
+                ColorManager.FAB_ICON
         )
         val adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, list)
         listView?.adapter = adapter
